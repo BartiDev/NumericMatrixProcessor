@@ -2,7 +2,7 @@ package processor.utils.matrixOperations;
 
 public class MultiplyByConstant {
 
-    public double[][] execute(double[][] matrix, int constant) {
+    public double[][] execute(double[][] matrix, double constant) {
         double[][] result = new double[matrix.length][matrix[0].length];
 
         for (int i = 0; i < matrix.length; i++) {

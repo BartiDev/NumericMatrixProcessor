@@ -8,6 +8,7 @@ public class Menu {
                 "3. Multiply matrices\n" +
                 "4. Transpose matrix\n" +
                 "5. Calculate a determinant\n" +
+                "6. Inverse Matrix\n" +
                 "0. Exit");
     }
 }

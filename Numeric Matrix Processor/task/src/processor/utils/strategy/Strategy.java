@@ -2,10 +2,7 @@ package processor.utils.strategy;
 
 import processor.utils.matrixOperations.Sum;
 import processor.utils.matrixTransposing.Factory;
-import processor.utils.templates.DeterminantTemplate;
-import processor.utils.templates.MultiplyByConstantTemplate;
-import processor.utils.templates.MultipyTemplate;
-import processor.utils.templates.SumTemplate;
+import processor.utils.templates.*;
 
 import java.util.Scanner;
 
@@ -40,6 +37,10 @@ public class Strategy {
                 case 5:
                     System.out.printf("Your choice: %d\n", input);
                     new DeterminantTemplate().execute();
+                    break;
+                case 6:
+                    System.out.printf("Your choice: %d\n", input);
+                    new InverseTemplate().execute();
                     break;
                 case 0:
                     System.out.printf("Your choice: %d\n", input);
