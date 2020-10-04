@@ -13,7 +13,7 @@ public class Determinant {
         } else {
             for (int i = 0; i < arr.length; i++) {
                 double[][] minor = MinorMatrixConstructor.construct(arr, 0, i);
-                result += Math.pow(-1,i) * arr[0][i] * determine(minor);
+                result += Math.pow(-1, i) * arr[0][i] * determine(minor);
             }
         }
         return result;

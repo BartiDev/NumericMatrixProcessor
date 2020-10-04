@@ -3,7 +3,6 @@ import processor.utils.Builder;
 import processor.utils.Printer;
 import processor.utils.matrixDeterminant.Determinant;
 import processor.utils.matrixInverse.AdjointMatrix;
-import processor.utils.matrixInverse.MatrixInverse;
 import processor.utils.matrixOperations.MultiplyByConstant;
 import processor.utils.matrixTransposing.MainDiagonal;
 import processor.utils.validators.Inversable;
@@ -17,7 +16,6 @@ public class InverseTemplate {
         Builder builder = new Builder();
         Printer printer = new Printer();
         AdjointMatrix adjMatrix = new AdjointMatrix();
-        MatrixInverse matrixInverse = new MatrixInverse();
         MainDiagonal transposer = new MainDiagonal();
         Determinant determinant = new Determinant();
         MultiplyByConstant multiply = new MultiplyByConstant();
@@ -29,15 +27,14 @@ public class InverseTemplate {
         int nA = Integer.parseInt(nmArrA[1]);
         double[][] matrix = builder.buildMatrix(mA, nA);
         double det = determinant.determine(matrix);
-        double scalar = 1 / det;
+        double scalar = 1.0 / det;
         System.out.println("The result is: ");
 
         if (inversable.check(det)) {
-
             printer.print(multiply.execute(
-                    matrixInverse.inverse(
                     transposer.transpose(
-                    adjMatrix.construct(matrix))), scalar));
+                    adjMatrix.construct(matrix)), scalar));
+
         } else {
             System.out.println("This matrix doesn't have an inverse.");
         }
